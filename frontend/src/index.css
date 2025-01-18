@@ -1,0 +1,53 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1{
+  text-align: center;
+  padding: 20px;
+}
+
+#form{
+  width: 500px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  box-shadow: 0 0 2px;
+  border-radius: 10px;
+}
+
+#form input{
+  width: 85%;
+  margin: auto;
+}
+
+#btn{
+  width: 70%;
+  margin-left: 110px;
+}
+  
+#table{
+  width: 90%;
+  margin: auto;
+}
+
+#table th{
+  text-align: center;
+}
+
+#table td{
+  text-align: center;
+  align-content: center;
+  font-weight: 600;
+}
+
+td button{
+  padding: 5px 8px;
+  border-radius: 2px  ;
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 0 2px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
