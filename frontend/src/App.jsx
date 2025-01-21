@@ -5,6 +5,7 @@ import Home from './Home'
 import Insert from './Insert'
 import Display from './Display'
 import AddBook from './AddBook'
+import EditBook from './EditBook'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Route path='insert' element={<Insert/>}/>
           <Route path='display' element={<Display/>}/>
           <Route path='addbook/:id' element={<AddBook/>}/>
+          <Route path='editbook/:id' element={<EditBook/>}/>
          </Route>
        </Routes>
       </BrowserRouter>

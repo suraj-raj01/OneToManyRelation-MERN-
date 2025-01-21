@@ -3,7 +3,10 @@ import axios from "axios";
 import Table from "react-bootstrap/Table";
 import {MDBIcon} from "mdb-react-ui-kit"
 import { useNavigate } from "react-router-dom";
+import {message} from "antd";
+
 const Display = () => {
+
   const navigate = useNavigate();
   const [mydata, setMydata] = useState([]);
 
@@ -22,12 +25,19 @@ const Display = () => {
     navigate(`/addbook/${id}`);
   };
 
-  const delBook=(id)=>{
-    alert(id)
+  const delBook=async(id)=>{
+    let api = "http://localhost:8000/author/deleteBook";
+    try {
+      const response = await axios.post(api,{id:id});
+      message.success(response.data.msg);
+      loadData();
+    } catch (error) {
+      message.error(error.response.data.msg);
+    }
   }
 
   const editBook=(id)=>{
-    alert(id)
+    navigate(`/editbook/${id}`)
   }
 
   const res = mydata.map((key) => {
@@ -57,8 +67,8 @@ const Display = () => {
                         gap:'20px'
                       }}>
                         Price : {key1.bookprice}
-                        <span onClick={()=>{delBook(key1._id)}}><MDBIcon fas icon="trash" /></span>
                         <span onClick={()=>{editBook(key1._id)}}><MDBIcon fas icon="pen-square" /></span>
+                        <span onClick={()=>{delBook(key1._id)}}><MDBIcon fas icon="trash" /></span>
                       </div>
                     </td>
                   </div>

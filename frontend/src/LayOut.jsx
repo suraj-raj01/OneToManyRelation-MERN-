@@ -8,7 +8,7 @@ const LayOut = () => {
     <div>
       <Navbar expand="lg" className="bg-body-tertiary" id="navbar">
         <Container>
-          <Navbar.Brand as={Link} to="home">OneToMany Relationship</Navbar.Brand>
+          <Navbar.Brand as={Link} to="home">Book Management</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

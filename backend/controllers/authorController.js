@@ -41,8 +41,47 @@ const addBook = async (req, res) => {
     res.send("OK");
 }
 
+const deleteBook = async(req,res)=>{
+    const {id} = req.body;
+    console.log(id);
+    try {
+        await BookModel.findByIdAndDelete(id);
+        res.status(200).send({msg:"data delete success!!!"});
+    } catch (error) {
+        res.status(400).send({msg:"somethig went wrong!!!"});
+    }
+}
+
+const editDisplay=async(req,res)=>{
+    let {id} =  req.body;
+    try {
+        const Data = await BookModel.findById(id);
+        console.log(Data);
+        res.status(200).send(Data);
+    } catch (error) {
+        res.status(400).send({msg:"something went wrong!!"});
+    }
+}
+
+const editdataSave=async(req,res)=>{
+    const {id,booktitle,bookprice}= req.body;
+    try {
+
+        await BookModel.findByIdAndUpdate(id,{
+            booktitle:booktitle,
+            bookprice:bookprice
+        });
+        res.status(200).send({msg:"data update success!!"});
+    } catch (error) {
+        res.error(400).send({msg:"something went wrong!!"});
+    }
+}
+
 module.exports = {
     insertData,
     displayData,
-    addBook
+    addBook,
+    deleteBook,
+    editDisplay,
+    editdataSave
 }
