@@ -8,7 +8,9 @@ h1{
   text-align: center;
   padding: 20px;
 }
-
+#navbar{
+  height: 10vh;
+}
 #form{
   width: 500px;
   margin: 50px auto;

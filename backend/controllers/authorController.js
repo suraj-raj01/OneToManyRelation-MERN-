@@ -23,7 +23,6 @@ const insertData = async (req, res) => {
 const displayData = async (req, res) => {
     try {
         const Data = await AuthorModel.find().populate("books");
-        console.log(Data);
         res.status(200).send(Data);
     } catch (error) {
         res.status(400).send({ msg: "something went wrong!!" })

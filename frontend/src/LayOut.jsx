@@ -6,7 +6,7 @@ import {Link,Outlet} from "react-router-dom"
 const LayOut = () => {
   return (
     <div>
-      <Navbar expand="lg" className="bg-body-tertiary">
+      <Navbar expand="lg" className="bg-body-tertiary" id="navbar">
         <Container>
           <Navbar.Brand as={Link} to="home">OneToMany Relationship</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

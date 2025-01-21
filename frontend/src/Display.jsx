@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Table from "react-bootstrap/Table";
+import {MDBIcon} from "mdb-react-ui-kit"
 import { useNavigate } from "react-router-dom";
 const Display = () => {
   const navigate = useNavigate();
@@ -21,6 +22,14 @@ const Display = () => {
     navigate(`/addbook/${id}`);
   };
 
+  const delBook=(id)=>{
+    alert(id)
+  }
+
+  const editBook=(id)=>{
+    alert(id)
+  }
+
   const res = mydata.map((key) => {
     return (
       <>
@@ -39,8 +48,19 @@ const Display = () => {
                       fontWeight: "600",
                     }}
                   >
-                    <td style={{textTransform:'uppercase'}}>Book title :- {key1.booktitle}</td>
-                    <td style={{textTransform:'capitalize'}}>Price : {key1.bookprice}</td>
+                    <td style={{textTransform:'uppercase'}}> Book title :- {key1.booktitle}</td>
+                    <td style={{textTransform:'uppercase'}}>
+                    <div style={{
+                        display:'flex',
+                        alignItems:'center',
+                        justifyContent:'space-between',
+                        gap:'20px'
+                      }}>
+                        Price : {key1.bookprice}
+                        <span onClick={()=>{delBook(key1._id)}}><MDBIcon fas icon="trash" /></span>
+                        <span onClick={()=>{editBook(key1._id)}}><MDBIcon fas icon="pen-square" /></span>
+                      </div>
+                    </td>
                   </div>
                 </>
               );
@@ -52,7 +72,7 @@ const Display = () => {
                 addmoreBook(key._id);
               }}
             >
-              add book
+             Add <MDBIcon fas icon="plus-circle" />
             </button>
           </td>
         </tr>
