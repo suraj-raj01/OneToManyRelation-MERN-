@@ -44,7 +44,7 @@ const Display = () => {
     return (
       <>
         <tr>
-          <td>{key.authorname}</td>
+          <td style={{color:'orangered'}}>{key.authorname}</td>
           <td>
             {key.books.map((key1) => {
               return (
@@ -55,7 +55,7 @@ const Display = () => {
                       padding: "0px 10px",
                       alignItems: "center",
                       justifyContent: "space-between",
-                      fontWeight: "600",
+                      fontWeight: "600"
                     }}
                   >
                     <td style={{textTransform:'uppercase'}}> Book title :- {key1.booktitle}</td>
@@ -66,7 +66,7 @@ const Display = () => {
                         justifyContent:'space-between',
                         gap:'20px'
                       }}>
-                        Price : {key1.bookprice}
+                        Price : {key1.bookprice}{".00 ₹"}
                         <span onClick={()=>{editBook(key1._id)}}><MDBIcon fas icon="pen-square" /></span>
                         <span onClick={()=>{delBook(key1._id)}}><MDBIcon fas icon="trash" /></span>
                       </div>

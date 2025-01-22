@@ -43,7 +43,6 @@ const addBook = async (req, res) => {
 
 const deleteBook = async(req,res)=>{
     const {id} = req.body;
-    console.log(id);
     try {
         await BookModel.findByIdAndDelete(id);
         res.status(200).send({msg:"data delete success!!!"});
@@ -56,7 +55,6 @@ const editDisplay=async(req,res)=>{
     let {id} =  req.body;
     try {
         const Data = await BookModel.findById(id);
-        console.log(Data);
         res.status(200).send(Data);
     } catch (error) {
         res.status(400).send({msg:"something went wrong!!"});

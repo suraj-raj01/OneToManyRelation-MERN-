@@ -11,6 +11,12 @@ h1{
 #navbar{
   height: 10vh;
 }
+#navbar a{
+  font-weight: 500;
+}
+#navbar a:focus{
+  color: orangered;
+}
 #form{
   width: 500px;
   margin: 50px auto;
@@ -49,10 +55,12 @@ td button{
   border-radius: 2px  ;
   border: none;
   background-color: transparent;
-  box-shadow: 0 0 2px;
+  box-shadow: 0 0 1px black;
   font-weight: 600;
+  color: orangered;
   text-transform: capitalize;
 }
 td i{
   cursor: pointer;
+  color: orangered;
 }
