@@ -1,12 +1,13 @@
 const express = require("express");
 const app = express();
-const Port = 8000;
+require("dotenv").config();
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const authorRoute = require("./routes/authorRoute")
+const Port = process.env.PORT || 8000;
 
-mongoose.connect("mongodb://127.0.0.1:27017/oneToManyRelation").then(()=>{
+mongoose.connect(process.env.DB_URL).then(()=>{
     console.log("Database Connected!!");
 })
 
